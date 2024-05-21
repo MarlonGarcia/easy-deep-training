@@ -1,0 +1,8 @@
+- Lembrar de verificar
+	- como é feito o cálculo do erro/das perdas, é feito correto, ou com o último lote?
+	- Como é feito o contjunto de teste (dados não vistos) e o conjunto de validação (exemplo de dado de treino).
+
+
+- Verificar se podemso deletar "load_model"
+
+- Delete "test_models = False" and test models in another function/class
