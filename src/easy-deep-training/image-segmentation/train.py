@@ -34,21 +34,29 @@ from utils import *
 class easy_train():
     
     def __init__(self, save_here):
-        # Importing configuration files from "config.ini"
-        config = configparser.ConfigParser()
-        config.read(os.path.join(save_here, 'config.ini'))
-        
-        # Defining 'self' variables
+        # Defining the 'self' variables for 'save_here' directory
         self.save_here = save_here
-        # If we are on Colab, mount the drive
+        # If we are on Colab, we need to mount the drive
         try:
             # Importing Drive
             from google.colab import drive
+            # Mounting drive
             drive.mount('/content/gdrive')
+            # Importing 'sys' and adding 'self.save_here' to the Colab's path
             import sys
-            sys.path.append(root_folder)
+            sys.path.append(self.save_here)
         except:
             pass
+        
+        # Importing configuration variables from "config.ini"
+        config = configparser.ConfigParser()
+        config.read(os.path.join(self.save_here, 'config.ini'))
+        
+        # Accessing configuration directories
+        train_dir = config.get('Directories', 'train_dir').split(',')
+        test_dir = 
+        
+        
     
     
     
