@@ -15,7 +15,7 @@ import numpy as np
 import pandas as pd
 import time
 import os
-
+import configparser
 
 # Verify if we are on Google Colab
 try:
@@ -33,9 +33,13 @@ from utils import *
 
 class easy_train():
     
-    def __init__(self, root_folder):
+    def __init__(self, save_here):
+        # Importing configuration files from "config.ini"
+        config = configparser.ConfigParser()
+        config.read(os.path.join(save_here, 'config.ini'))
+        
         # Defining 'self' variables
-        self.root_folder = root_folder
+        self.save_here = save_here
         # If we are on Colab, mount the drive
         try:
             # Importing Drive
