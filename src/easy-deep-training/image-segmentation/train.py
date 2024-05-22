@@ -38,8 +38,7 @@ class easy_train():
         self.save_here = save_here
         # If we are on Colab, we need to mount the drive
         try:
-            # Importing Drive
-            from google.colab import drive
+            # Importing Drive 
             # Mounting drive
             drive.mount('/content/gdrive')
             # Importing 'sys' and adding 'self.save_here' to the Colab's path
